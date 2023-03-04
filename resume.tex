@@ -1,80 +1,83 @@
 % !TEX program = xelatex
 
 \documentclass{resume}
-%\usepackage{zh_CN-Adobefonts_external} % Simplified Chinese Support using external fonts (./fonts/zh_CN-Adobe/)
-%\usepackage{zh_CN-Adobefonts_internal} % Simplified Chinese Support using system fonts
 
 \begin{document}
 \pagenumbering{gobble} % suppress displaying page number
 
-\name{Bin Yuan}
+\name{Jin Fang}
 
 \basicInfo{
-  \email{yuanbin2014@gmail.com} \textperiodcentered\ 
-  \phone{(+86) 131-221-87xxx} \textperiodcentered\ 
-  \linkedin[billryan8]{https://www.linkedin.com/in/billryan8}}
+  \email{fanjin98@outlook.com}
+  \textperiodcentered\
+  \phone{(+86) 181-5566-1676}
+  \textperiodcentered\
+  \scholar[Scholar]{https://scholar.google.com/citations?user=0Hhc6iUAAAAJ}
+  \textperiodcentered\
+  \homepage[Homepage]{www.fangjin.site}
+}
 
-\section{\faGraduationCap\ Education}
-\datedsubsection{\textbf{Shanghai Jiao Tong University (SJTU)}, Shanghai, China}{2013 -- Present}
-\textit{Master student} in Electronics Engineering (EE), expected March 2016
-\datedsubsection{\textbf{Xidian University}, Shaanxi, China}{2009 -- 2013}
-\textit{B.S.} in Electronics Engineering (EE)
+\section{Education}
 
-\section{\faUsers\ Experience}
-\datedsubsection{\textbf{FLAG Inc.} California, America}{2012 -- Present}
-\role{Summer Intern}{Manager: xxx}
-Brief introduction: xxx.
+\datedsubsection{\textbf{University of Science and Technology of China (USTC)}, Anhui, China}{2020.9-present}
+\textit{PhD student} in Computer Science (GPA: 3.46/4.00)
+
+\datedsubsection{\textbf{Hunan University (HNU)}, Hunan, China}{2016.9-2020.6}
+\textit{B.S.} in Computer Science
+
+\section{Publications}
+
+\datedsubsection{\href{https://ieeexplore.ieee.org/document/10050420}{GRID: Gradient Routing with In-network Aggregation for Distributed Training}}{2023.2}
+\role{\textbf{J Fang}, G Zhao, H Xu, C Wu, Z Yu}{IEEE/ACM Transactions on Networking (\textbf{ToN})}
+
+\section{Experience}
+
+\datedsubsection{\href{https://www.fangjin.site/2022/12/02/gradientscheduling/}{\textbf{GOAT}}, Zhijiang Lab open project}{2022.6-2022.9}
+\role{Research Intern}{}
+GOAT  performs gradient scheduling with collaborative in-network aggregation to efficiently aggregate asynchronously arriving gradients and speed up the distributed training 
 \begin{itemize}
-  \item Implemented xxx feature
-  \item Optimized xxx 5\%
-  \item xxx
+  \item Design a knapsack-based randomized rounding algorithm to perform gradient scheduling
+  \item Implement GOAT with Pytorch and P4 (TNA) in a testbed containing 8 servers and 3 switches
+  \item Reduce the communication overhead of distibuted training tasks by 81.2\%
+  % \item Produced a paper (on submission)
 \end{itemize}
 
-\datedsubsection{\textbf{xxx Projects}}{Jan. 2015 -- Present}
-\role{C, Python, Django, Linux}{Individual Projects, collaborated with xxx}
-Brief introduction: xxx
+\datedsubsection{\href{https://github.com/futurewei-cloud/alcor}{\textbf{Alcor}}, Open sourced project}{2020.9-2021.3}
+\role{C++ Developer}{}
+Alcor leverages the latest SDN and container technologies as well as an advanced distributed system design to support the deployment, configuration, and scale-out of millions of VM and containers.
 \begin{itemize}
-  \item Implemented xxx feature
-  \item Optimized xxx 5\%
-  \item xxx
+  \item Developing and end-to-end testing of the virtualization control plane (\href{https://github.com/futurewei-cloud/alcor-control-agent}{ACA})
+  \item Add grpc thread for pulsar subscribe infomation (\href{https://github.com/futurewei-cloud/alcor-control-agent/pull/274}{PR \#274})
 \end{itemize}
 
-\datedsubsection{\textbf{\LaTeX\ résumé template}}{May. 2015 -- Present}
-\role{\LaTeX, Maintainer}{Individual Projects}
-An elegant \LaTeX\ résumé template, https://github.com/billryan/resume
+\datedsubsection{\href{https://www.fangjin.site/2021/08/01/RobustVNFPlacement/}{\textbf{Reveal}}, Academic project}{2021.2-2021.6}
+Reveal tries to improve the robustness of edge clouds by limiting No. of VNFs each user can access and No. of users each VNF can serve.
 \begin{itemize}
-  \item Easy to be further customized or extended
-  \item Full support for unicode characters (e.g. CJK) with \XeLaTeX\
-  \item FontAwesome 4.5.0 support
+  \item Design a two-phase algorithm to solve the problem of VNF placement and request scheduling
+  \item Implement Reveal with Python in a testbed containing 6 Nvidia Jetson Tx2s and 20 Raspberry Pis
 \end{itemize}
 
-% Reference Test
-%\datedsubsection{\textbf{Paper Title\cite{zaharia2012resilient}}}{May. 2015}
-%An xxx optimized for xxx\cite{verma2015large}
-%\begin{itemize}
-%  \item main contribution
-%\end{itemize}
+\section{Patents}
 
-\section{\faCogs\ Skills}
+\datedsubsection{A gradient scheduling method based on programmable switch under PS architecture}{2021}
+\role{G Zhao, \textbf{J Fang}, H Xu, C Wu}{Published: CN114900482A}
+
+\datedsubsection{A VNF placement method in the edge cloud}{2021}
+\role{H Xu, \textbf{J Fang}, G Zhao, H Tu, H Wang}{Published: CN113961324A}
+
+% \section{Skills}
+% \begin{itemize}[parsep=0.5ex]
+%   \item Courses: Algorithm Design
+%   \item Development: Pytorch, Mininet
+%   \item Programming Languages: C/C++, Python, P4, C\#
+% \end{itemize}
+
+\section{Awards}
 \begin{itemize}[parsep=0.5ex]
-  \item Programming Languages: C == Python > C++ > Java
-  \item Platform: Linux
-  \item Development: Web, xxx
+  \item \datedline{Excellent price (25\%) in Intel P4 China Hackthon}{2022}
+  \item \datedline{Doctoral first-class academic scholarship}{2022}
+  \item \datedline{Master's first-class study scholarship}{2020, 2021}
+  % \item \datedline{Teaching Assistant of Advanced Computer Networking}{2022}
 \end{itemize}
 
-\section{\faHeartO\ Honors and Awards}
-\datedline{\textit{\nth{1} Prize}, Award on xxx }{Jun. 2013}
-\datedline{Other awards}{2015}
-
-\section{\faInfo\ Miscellaneous}
-\begin{itemize}[parsep=0.5ex]
-  \item Blog: http://your.blog.me
-  \item GitHub: https://github.com/username
-  \item Languages: English - Fluent, Mandarin - Native speaker
-\end{itemize}
-
-%% Reference
-%\newpage
-%\bibliographystyle{IEEETran}
-%\bibliography{mycite}
 \end{document}
