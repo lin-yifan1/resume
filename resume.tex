@@ -12,66 +12,69 @@
   \textperiodcentered\
   \phone{(+86) 181-5566-1676}
   \textperiodcentered\
-  \scholar[Scholar]{https://scholar.google.com/citations?user=0Hhc6iUAAAAJ}
+  \github[Fangjin98]{https://github.com/Fangjin98}
   \textperiodcentered\
-  \homepage[Homepage]{www.fangjin.site}
+  \homepage[www.fangjin.site]{www.fangjin.site}
 }
 
 \section{Education}
 
-\datedsubsection{\textbf{University of Science and Technology of China (USTC)}, Anhui, China}{2020.9-present}
-\textit{PhD student} in Computer Science (GPA: 3.46/4.00)
+\datedsubsection{\textbf{University of Science and Technology of China (USTC)}}{Anhui, China}
+\datedsubsection{\textit{PhD student} in Computer Science (GPA: 3.46/4.00)}{2020.9-present}
 
-\datedsubsection{\textbf{Hunan University (HNU)}, Hunan, China}{2016.9-2020.6}
-\textit{B.S.} in Computer Science
+\datedsubsection{\textbf{Hunan University (HNU)}}{Hunan, China}
+\datedsubsection{\textit{B.S.} in Computer Science}{2016.9-2020.6}
 
 \section{Publications}
 
-\datedsubsection{\href{https://ieeexplore.ieee.org/document/10050420}{GRID: Gradient Routing with In-network Aggregation for Distributed Training}}{2023.2}
-\role{\textbf{J Fang}, G Zhao, H Xu, C Wu, Z Yu}{IEEE/ACM Transactions on Networking (\textbf{ToN})}
+\begin{enumerate}
+  \item \textbf{J. Fang}, G. Zhao, H. Xu, Z. Yu, B. Shen, X. Li, \textit{GOAT: Gradient Scheduling with Collaborative In-Network Aggregation for Distributed Training}, IEEE/ACM International Symposium on Quality of Service (\textbf{IWQoS'23})
+  \item \textbf{J. Fang}, G. Zhao, H. Xu, C. Wu, Z. Yu, \textit{GRID: Gradient Routing with In-network Aggregation for Distributed Training}, IEEE/ACM Transactions on Networking (\textbf{ToN'23})
+\end{enumerate}
 
 \section{Experience}
 
-\datedsubsection{\href{https://www.fangjin.site/2022/12/02/gradientscheduling/}{\textbf{GOAT}}, Zhijiang Lab open project}{2022.6-2022.9}
-\role{Research Intern}{}
-GOAT  performs gradient scheduling with collaborative in-network aggregation to efficiently aggregate asynchronously arriving gradients and speed up the distributed training 
+\datedsubsection{\textbf{Speeding up distributed training with programmable switches}}{Zhijiang Lab, Hangzhou, China}
+\datedsubsection{\textit{Research Intern}}{2022.6-2022.9}
 \begin{itemize}
-  \item Design a knapsack-based randomized rounding algorithm to perform gradient scheduling
-  \item Implement GOAT with Pytorch and P4 (TNA) in a testbed containing 8 servers and 3 switches
-  \item Reduce the communication overhead of distibuted training tasks by 81.2\%
-  % \item Produced a paper (on submission)
+  \item Mitigated the in-network aggregation performance down casued by asychronous arrived packets
+  \item Designed a knapsack-based randomized rounding algorithm to perform gradient scheduling
+  \item Implemented a prototype containing 8 servers and 3 switches with Pytorch and P4 (TNA architecture)
+  \item Reduced the communication overhead of distibuted training tasks by 81.2\%
 \end{itemize}
 
-\datedsubsection{\href{https://github.com/futurewei-cloud/alcor}{\textbf{Alcor}}, Open sourced project}{2020.9-2021.3}
-\role{C++ Developer}{}
-Alcor leverages the latest SDN and container technologies as well as an advanced distributed system design to support the deployment, configuration, and scale-out of millions of VM and containers.
+\datedsubsection{\textbf{Developing and testing Alcor, a cloud native SDN platform}}{Suzhou, China}
+\datedsubsection{\textit{Developer}}{2020.9-2021.3}
 \begin{itemize}
-  \item Developing and end-to-end testing of the virtualization control plane (\href{https://github.com/futurewei-cloud/alcor-control-agent}{ACA})
-  \item Add grpc thread for pulsar subscribe infomation (\href{https://github.com/futurewei-cloud/alcor-control-agent/pull/274}{PR \#274})
+  \item Wrote a automatic building scripts with bash.
+  \item Developed an end-to-end test of the virtualization control plane (\href{https://github.com/futurewei-cloud/alcor-control-agent}{ACA}) with C++
+  \item Added grpc thread for pulsar subscribe information (\href{https://github.com/futurewei-cloud/alcor-control-agent/pull/274}{PR \#274}) with C++
 \end{itemize}
 
-\datedsubsection{\href{https://www.fangjin.site/2021/08/01/RobustVNFPlacement/}{\textbf{Reveal}}, Academic project}{2021.2-2021.6}
-Reveal tries to improve the robustness of edge clouds by limiting No. of VNFs each user can access and No. of users each VNF can serve.
+\datedsubsection{\textbf{Robust-awareness VNF placement in the edge cloud}}{Hefei, China}
+\datedsubsection{\textit{Research Assistant}}{2021.2-2021.6}
 \begin{itemize}
-  \item Design a two-phase algorithm to solve the problem of VNF placement and request scheduling
-  \item Implement Reveal with Python in a testbed containing 6 Nvidia Jetson Tx2s and 20 Raspberry Pis
+  \item Improved the robustness of edge clouds by limiting the influence of malicious users and failed VNFs.
+  \item Designed a two-phase algorithm to solve the problem of virtual network functions (VNF) placement and request scheduling
+  \item Implemented a prototype containing 6 Nvidia Jetson Tx2s and 20 Raspberry Pis with Python
+  \item Improved the network throughput by $57\%$ under exisitence the malicious user.
 \end{itemize}
 
 \section{Patents}
 
-\datedsubsection{A gradient scheduling method based on programmable switch under PS architecture}{2021}
-\role{G Zhao, \textbf{J Fang}, H Xu, C Wu}{Published: CN114900482A}
-
-\datedsubsection{A VNF placement method in the edge cloud}{2021}
-\role{H Xu, \textbf{J Fang}, G Zhao, H Tu, H Wang}{Published: CN113961324A}
+\begin{enumerate}
+  \item G. Zhao, \textbf{J. Fang}, H. Xu, C. Wu, \textit{A gradient scheduling method based on programmable switch under PS architecture}, Published: CN114900482A
+  \item H. Xu, \textbf{J. Fang}, G. Zhao, H. Tu, H. Wang, \textit{A VNF placement method in the edge cloud}, \\ Published: CN113961324A
+\end{enumerate}
 
 \section{Awards}
+
 \begin{itemize}[parsep=0.5ex]
   \item \datedline{Excellent price (25\%) in Intel P4 China Hackthon}{2022}
   \item \datedline{Doctoral first-class academic scholarship}{2022}
   \item \datedline{Master's first-class study scholarship}{2020, 2021}
-  % \item \datedline{Teaching Assistant of Advanced Computer Networking}{2022}
 \end{itemize}
+% \item \datedline{Teaching Assistant of Advanced Computer Networking}{2022}
 
 % \section{Skills}
 % \begin{itemize}[parsep=0.5ex]
