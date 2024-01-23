@@ -13,80 +13,115 @@
 \begin{document}
 \pagenumbering{gobble} % suppress displaying page number
 
-\name{你的大名}
+\name{方缙}
 
 \basicInfo{
-  \email{yuanbin2014@gmail.com} \textperiodcentered\ 
-  \phone{(+86) 131-221-87xxx} \textperiodcentered\ 
-  \linkedin[billryan8]{https://www.linkedin.com/in/billryan8}}
+  \email{fangjin98@mail.ustc.edu.cn} \textperiodcentered\ 
+  \phone{(+86) 181-5566-1676} \textperiodcentered\ 
+  \homepage[www.fangjin.site]{www.fangjin.site}
+}
  
-\section{\faGraduationCap\  教育背景}
-\datedsubsection{\textbf{上海交通大学}, 上海}{2013 -- 至今}
-\textit{在读硕士研究生}\ 信息与通信工程, 预计 2016 年 3 月毕业
-\datedsubsection{\textbf{西安电子科技大学}, 西安, 陕西}{2009 -- 2013}
-\textit{学士}\ 通信工程
+\section{教育背景}
 
-\section{\faUsers\ 实习/项目经历}
-\datedsubsection{\textbf{黑科技公司} 上海}{2015年3月 -- 2015年5月}
-\role{实习}{经理: 高富帅}
-xxx后端开发
+
+\datedsubsection{\textbf{中国科学技术大学}}{合肥, 安徽}
+\datedsubsection{\textit{硕博连读}\ 计算机科学与技术}{2020.9-至今}
 \begin{itemize}
-  \item 实现了 xxx 特性
-  \item 后台资源占用率减少8\%
-  \item xxx
+  \item 研究方向为数据中心网络、可编程网络、分布式训练系统、在网计算等
+  \item 导师：徐宏力、赵功名
 \end{itemize}
 
-\datedsubsection{\textbf{分布式科学上网姿势}}{2014年6月 -- 至今}
-\role{Golang, Linux}{个人项目，和富帅糕合作开发}
-\begin{onehalfspacing}
-分布式负载均衡科学上网姿势, https://github.com/cyfdecyf/cow
+\datedsubsection{\textbf{湖南大学}}{长沙, 湖南}
+\datedsubsection{\textit{学士}\ 计算机科学与技术}{2016.9-2020.6}
 \begin{itemize}
-  \item 修复了连接未正常关闭导致文件描述符耗尽的 bug
-  \item 使用Chord 哈希 URL, 实现稳定可靠地分流
-  \item xxx (尽量使用量化的客观结果)
+  \item GPA: 3.4 (前15\%)
+  \item 保送至中国科学技术大学读研
+  \item 获得优秀毕业论文奖
 \end{itemize}
-\end{onehalfspacing}
 
-\datedsubsection{\textbf{\LaTeX\ 简历模板}}{2015 年5月 -- 至今}
-\role{\LaTeX, Python}{个人项目}
-\begin{onehalfspacing}
-优雅的 \LaTeX\ 简历模板, https://github.com/billryan/resume
+\section{论文发表}
+
+\begin{enumerate}
+  \item \textbf{J. Fang}, G. Zhao, H. Xu, C. Wu, Z. Yu, \textit{GRID: Gradient Routing with In-network Aggregation for Distributed Training}, IEEE/ACM Transactions on Networking (\textbf{ToN'23}), CCF A
+  \item \textbf{J. Fang}, G. Zhao, H. Xu, Z. Yu, B. Shen, X. Li, \textit{GOAT: Gradient Scheduling with Collaborative In-Network Aggregation for Distributed Training}, IEEE/ACM International Symposium on Quality of Service (\textbf{IWQoS'23}), CCF B
+  \item \textbf{J. Fang}, G. Zhao, H. Xu, H. Tu, H. Wang, \textit{Reveal: Robustness-Aware VNF Placement and Request Scheduling in Edge Clouds}, Computer Networks (\textbf{ComNet'23}), CCF B
+\end{enumerate}
+
+\section{项目经历}
+
+\datedsubsection{\textbf{Simulating network faults with programmable dataplane}}{Suzhou, China}
+\datedsubsection{\textit{Main Developer}}{2022.12-2023.9}
 \begin{itemize}
-  \item 容易定制和扩展
-  \item 完善的 Unicode 字体支持，使用 \XeLaTeX\ 编译
-  \item 支持 FontAwesome 4.5.0
+  \item Build a user-friendly, multi-backend fault injection system in programmable dataplane
+  \item Design a parser generation algorithm to handle flow dependency and load the table entries
+  \item Formulate the fault injection point selection problem
+  \item Implement several network faults with P4 in TNA and PSA architectures
 \end{itemize}
-\end{onehalfspacing}
 
-% Reference Test
-%\datedsubsection{\textbf{Paper Title\cite{zaharia2012resilient}}}{May. 2015}
-%An xxx optimized for xxx\cite{verma2015large}
-%\begin{itemize}
-%  \item main contribution
-%\end{itemize}
+\datedsubsection{\textbf{Accelerating distributed training with programmable switches}}{Zhijiang Lab, Hangzhou, China}
+\datedsubsection{\textit{Research Intern}}{2022.6-2022.9}
+\begin{itemize}
+  \item Improve the in-network aggregation throughput by mitigating the influence of asychronous arrived packets
+  \item Design a knapsack-based randomized rounding algorithm for gradient scheduling
+  \item Implement a distributed training prototype with Pytorch 
+  \item Implement the in-network aggregation logic in Tofino with P4
+  \item Reduce the communication overhead of distibuted training tasks by 81.2\%
+\end{itemize}
 
-\section{\faCogs\ IT 技能}
-% increase linespacing [parsep=0.5ex]
+\datedsubsection{\textbf{Developing and testing Alcor, a cloud native SDN platform}}{Futurewei, \textit{Remotely}}
+\datedsubsection{\textit{Developer}}{2021.6-2021.9}
+\begin{itemize}
+  \item Write an automatic building script for large scale deployment with bash
+  \item Write an end-to-end test of the virtualization control plane (\href{https://github.com/futurewei-cloud/alcor-control-agent}{ACA}) with C++
+  \item Develop grpc thread for pulsar subscribe information (\href{https://github.com/futurewei-cloud/alcor-control-agent/pull/274}{PR \#274}) with C++
+\end{itemize}
+
+\datedsubsection{\textbf{Robust-awareness VNF placement in the edge cloud}}{Hefei, China}
+\datedsubsection{\textit{Main Developer}}{2021.2-2021.6}
+\begin{itemize}
+  \item Improve the robustness of edge clouds by limiting the influence of malicious users and failed VNFs
+  \item Design a two-phase algorithm to solve the problem of VNF placement and request scheduling
+  \item Implement a prototype containing 6 Nvidia Jetson Tx2s and 20 Raspberry Pis with Python
+  \item Improve the network throughput by $57\%$ under exisitence the malicious user
+\end{itemize}
+
+\datedsubsection{\textbf{Implement a LSTM model based on high-level synthesis}}{Hunan, China}
+\datedsubsection{\textit{Main Developer}}{2019.6-2020.1}
+\begin{itemize}
+  \item Train a LSTM model based on Keras to predict the steam pressure in nuclear power plant reactor
+  \item Implement the trained LSTM model with C++ and deploy it into a Pynq-Z2 board
+  \item Reduce the inference time by 90x compared with software implementation
+  \item \textit{Win the award of Excellent Graduation Thesis of Hunan University}
+\end{itemize}
+
+\section{相关专利}
+
+\begin{enumerate}
+  \item 赵功名, \textbf{方缙}, 徐宏力, 吴昌博, \textit{PS架构下基于可编程交换机的梯度调度方法和装置}, 已授权
+  \item 徐宏力, \textbf{方缙}, 赵功名, 凃化清, 汪海波, \textit{一种边缘云系统中的VNF部署调度方法}, 已公开
+\end{enumerate}
+
+\section{获奖情况}
+
 \begin{itemize}[parsep=0.5ex]
-  \item 编程语言: C == Python > C++ > Java
-  \item 平台: Linux
-  \item 开发: xxx
+  \item \datedline{中国电科十四所国睿奖学金}{2023}
+  \item \datedline{Intel P4 中国黑客松优胜奖 (前 25\%)}{2022}
+  \item \datedline{一等学业奖学金（博士）}{2022, 2023}
+  \item \datedline{一等学业奖学金（硕士）}{2020, 2021}
 \end{itemize}
+\section{IT 技能}
 
-\section{\faHeartO\ 获奖情况}
-\datedline{\textit{第一名}, xxx 比赛}{2013 年6 月}
-\datedline{其他奖项}{2015}
-
-\section{\faInfo\ 其他}
-% increase linespacing [parsep=0.5ex]
 \begin{itemize}[parsep=0.5ex]
-  \item 技术博客: http://blog.yours.me
-  \item GitHub: https://github.com/username
-  \item 语言: 英语 - 熟练(TOEFL xxx)
+  \item 编程语言: C/C++, Python, P4, C\#, Swift
+  \item 开发框架: Pytorch, p4c, eBPF, Mininet
 \end{itemize}
 
-%% Reference
-%\newpage
-%\bibliographystyle{IEEETran}
-%\bibliography{mycite}
+\section{其他服务}
+
+\begin{itemize}[parsep=0.5ex]
+  \item 审稿: IEEE JSAC, IEEE TNET, COMNET
+  \item 助教: COMP6103P Advanced Computer Networking
+\end{itemize}
+
+
 \end{document}
