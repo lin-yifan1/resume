@@ -5,6 +5,7 @@
 \documentclass{resume}
 \usepackage{graphicx}
 \usepackage{tabu}
+\usepackage{tabularx, booktabs}
 \usepackage{multirow}
 \usepackage{zh_CN-Adobefonts_external} % Simplified Chinese Support using external fonts (./fonts/zh_CN-Adobe/)
 % \usepackage{NotoSansSC_external}
@@ -16,6 +17,13 @@
 \begin{document}
 \pagenumbering{gobble} % suppress displaying page number
 
+% \begin{tabular}{p{13cm} p{4cm}}
+% \name{方缙} & \multirow{6}{\includegraphics[scale=0.13]{avatar.jpg}} \\
+% \email{fangjin98@mail.ustc.edu.cn} & \\
+% \phone{(+86) 181-5566-1676} & \\
+% \homepage[www.fangjin.site]{www.fangjin.site} & \\
+% \end{tabular}
+
 % \Large{
 %   \begin{tabu}{ c l }
 %    \multirow{5}{1in}{\includegraphics[width=0.88in]{avatar}} & \scshape{方缙}  \\
@@ -25,6 +33,7 @@
 %   \end{tabu}
 % }
 
+
 \name{方缙}
 
 \basicInfo{
@@ -32,16 +41,16 @@
   \phone{(+86) 181-5566-1676} \textperiodcentered\ 
   \homepage[www.fangjin.site]{www.fangjin.site}
 }
- 
+
 \section{教育背景}
 
-\datedsubsection{\textbf{中国科学技术大学}\ (C9) \qquad \textit{硕博连读} \qquad 计算机科学与技术}{2020.9-2025.6 (预计)}
+\datedsubsection{\textbf{中国科学技术大学} \qquad \textit{硕博连读} \qquad 计算机科学与技术}{2020.9-2025.6 (预计)}
 \begin{itemize}
   \item 研究方向: 数据中心网络、可编程网络、分布式训练、在网计算
   \item 导师：徐宏力、赵功名
 \end{itemize}
 
-\datedsubsection{\textbf{湖南大学}\ (985) \qquad \qquad \qquad \textit{学士} \qquad \qquad 计算机科学与技术}{2016.9-2020.6}
+\datedsubsection{\textbf{湖南大学} \qquad \qquad \qquad \textit{学士} \qquad \qquad 计算机科学与技术}{2016.9-2020.6}
 \begin{itemize}
   \item 湖南大学优秀毕业论文
 \end{itemize}
@@ -51,7 +60,9 @@
 \datedsubsection{\textbf{面向大模型训练的资源调度优化}}{华为2012中央研究院，合肥}
 \datedsubsection{\textit{技术点负责人}}{2023.12-至今}
 \begin{itemize}[parsep=0.5ex]
-  \item 调研现有针对大模型的分布式训练和推理算力调度优化研究
+  \item 现有针对大模型的分布式训练任务往往考虑如何高效地进行通信调度或资源复用，没有考虑算网资源对任务执行的影响
+  \item 调研现有大模型任务部署和算力调度优化方案，熟悉常见模型并行和数据并行工作
+  \item 建模不同算力间的通信拓扑、通信链路对任务训练时间的影响，辅助决策大模型训练任务部署
 \end{itemize}
 
 % \datedsubsection{\textbf{使用可编程交换机加速分布式模型训练}}{之江实验室，杭州}
@@ -77,8 +88,9 @@
 \datedsubsection{\textbf{基于可编程网络实现精准模拟网络故障}}{中科大苏高院，苏州}
 \datedsubsection{\textit{主要开发者}}{2022.12-2023.9}
 \begin{itemize}[parsep=0.5ex]
+  \item 目前基于端主机的故障注入难以覆盖大量复杂网络故障场景，且无法针对应用流量精准注入故障
   \item 基于可编程控制面设计并实现用户友好的多后端故障注入系统，提供一系列参数供用户自定义流量协议
-  \item 针对流依赖和流过滤，设计一个解析器生成算法实现精确的故障注入范围
+  \item 针对流依赖和流过滤，设计一个解析器生成算法，能够根据用户指示生成对应数据面程序
   \item 针对多租户和路由路径，形式化故障注入点选择问题
   \item 针对异构多后端网络设备，基于 P4 TNA 和 PSA 架构实现多种网络功能，系统资源消耗小于10\%
   \item 在4个流行的分布式系统任务 (Horovod, Redis, RDMA, Kafka) 中测试该系统并验证故障注入效果
@@ -87,9 +99,9 @@
 \datedsubsection{\textbf{使用可编程交换机加速分布式模型训练}}{之江实验室，杭州}
 \datedsubsection{\textit{主要开发者}}{2022.6-2022.9}
 \begin{itemize}[parsep=0.5ex]
-  \item 通过可编程交换机聚合转发的数据从而降低通信瓶颈，加速分布式模型训练
+  \item 大规模分布式模型训练具有通信瓶颈，该项目通过可编程交换机在网内聚合梯度以降低通信量，从而加速分布式模型训练
   \item 针对流量可变性，设计基于随机舍入算法解决网内聚合场景下的梯度路由问题
-  \item 基于 Pytorch 实现 PS 架构下分布式模型训练原型，通过自定义协议进行通信
+  \item 基于 Pytorch 实现包含 8 台服务器的 PS 架构分布式模型训练原型系统，主机间通过自定义协议进行通信
   \item 基于 Intel Tofino 可编程交换机实现网内聚合逻辑，并与主机端实现协同训练
   \item 相比较现有方案，降低分布式训练通信负载 $81.2\%$
 \end{itemize}
@@ -97,8 +109,8 @@
 \datedsubsection{\textbf{面向边缘云考虑鲁棒性的虚拟网络功能部署算法}}{中科大，合肥}
 \datedsubsection{\textit{主要开发者}}{2021.2-2021.6}
 \begin{itemize}[parsep=0.5ex]
-  \item 通过限制恶意用户和恶意虚拟网络功能 (VNF) 影响范围，提升边缘云鲁棒性
-  \item 设计了一个两步算法以解决VNF部署和请求调度问题
+  \item 边缘云的性能往往受到恶意用户和虚拟网络功能 (VNF)的影响，本文考虑限制恶意用户和 VNF 影响范围，提升边缘云鲁棒性
+  \item 考虑到VNF部署和用户请求调度往往在不同时间维度，设计了一个离线算法决策VNF部署以及在线算法执行请求调度
   \item 基于 Python 实现了包含 6 台 Nvidia Jetson Tx2s 和 20 台 Raspberry Pis 的原型系统
   \item 实验结果表明，在异常情况下该方案能够提升网络吞吐率 $57\%$
 \end{itemize}
@@ -120,7 +132,7 @@
   \item \textbf{J. Fang}, G. Zhao, H. Xu, H. Tu, H. Wang, \textit{Reveal: Robustness-Aware VNF Placement and Request Scheduling in Edge Clouds}, Computer Networks (\textbf{ComNet}), 2023, CCF B
   \item (在投) \textbf{J. Fang}, G. Zhao, H. Xu, Z. Yu, B. Shen, X. Li, \textit{Accelerating Distributed Training with Collaborative In-network Aggregation}, IEEE/ACM Transactions on Networking (\textbf{ToN}), 2024, CCF A
   \item (在投) \textbf{J. Fang}, G. Zhao, H. Xu, Z. Yu, J. Jiang, F. Zeng, \textit{Injecting Failure for Success: Towards General, Flexible and Efficient Network Fault Injection}, USENIX ATC, 2024, CCF A
-  \item J. Liu, Y. Zhai, G. Zhao, H. Xu, \textbf{J. Fang}, Z. Zeng, Y. Zhu, InArt: In-Network Aggregation with Route Selection for Accelerating Distributed Training, (\textbf{WWW'23}), CCF A
+  \item J. Liu, Y. Zhai, G. Zhao, H. Xu, \textbf{J. Fang}, Z. Zeng, Y. Zhu, InArt: In-Network Aggregation with Route Selection for Accelerating Distributed Training, International World Wide Web Conference (\textbf{WWW}), 2024, CCF A
   \item 赵功名, \textbf{方缙}, 徐宏力, 吴昌博, \textit{PS架构下基于可编程交换机的梯度调度方法和装置}, 已授权
   \item 徐宏力, \textbf{方缙}, 赵功名, 凃化清, 汪海波, \textit{一种边缘云系统中的VNF部署调度方法}, 已公开
 \end{enumerate}
