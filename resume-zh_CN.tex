@@ -7,6 +7,7 @@
 \usepackage{tabu}
 \usepackage{tabularx, booktabs}
 \usepackage{multirow}
+\usepackage{makecell}
 \usepackage{zh_CN-Adobefonts_external} % Simplified Chinese Support using external fonts (./fonts/zh_CN-Adobe/)
 % \usepackage{NotoSansSC_external}
 % \usepackage{NotoSerifCJKsc_external}
@@ -17,30 +18,22 @@
 \begin{document}
 \pagenumbering{gobble} % suppress displaying page number
 
-% \begin{tabular}{p{13cm} p{4cm}}
-% \name{方缙} & \multirow{6}{\includegraphics[scale=0.13]{avatar.jpg}} \\
-% \email{fangjin98@mail.ustc.edu.cn} & \\
-% \phone{(+86) 181-5566-1676} & \\
-% \homepage[www.fangjin.site]{www.fangjin.site} & \\
-% \end{tabular}
+\renewcommand\arraystretch{1.5}
+\begin{tabular}{p{13cm} p{4cm}}
+  \textbf{\huge 方缙} & \multirowcell{5}{\includegraphics[scale=0.1]{avatar}}\\
+  \email{fangjin98@mail.ustc.edu.cn} & \\
+  \phone{(+86) 181-5566-1676} & \\
+  \homepage[www.fangjin.site]{www.fangjin.site} & \\
+\end{tabular}
 
-% \Large{
-%   \begin{tabu}{ c l }
-%    \multirow{5}{1in}{\includegraphics[width=0.88in]{avatar}} & \scshape{方缙}  \\
-%     & \email{fangjin98@mail.ustc.edu.cn} \\
-%     & \phone{(+86) 181-5566-1676} \\
-%     & \homepage[www.fangjin.site]{www.fangjin.site}
-%   \end{tabu}
+
+% \name{方缙}
+
+% \basicInfo{
+%   \email{fangjin98@mail.ustc.edu.cn} \textperiodcentered\ 
+%   \phone{(+86) 181-5566-1676} \textperiodcentered\ 
+%   \homepage[www.fangjin.site]{www.fangjin.site}
 % }
-
-
-\name{方缙}
-
-\basicInfo{
-  \email{fangjin98@mail.ustc.edu.cn} \textperiodcentered\ 
-  \phone{(+86) 181-5566-1676} \textperiodcentered\ 
-  \homepage[www.fangjin.site]{www.fangjin.site}
-}
 
 \section{教育背景}
 
@@ -60,9 +53,9 @@
 \datedsubsection{\textbf{面向大模型训练的资源调度优化}}{华为2012中央研究院，合肥}
 \datedsubsection{\textit{技术点负责人}}{2023.12-至今}
 \begin{itemize}[parsep=0.5ex]
-  \item 现有针对大模型的分布式训练任务往往考虑如何高效地进行通信调度或资源复用，没有考虑算网资源对任务执行的影响
+  \item 大模型的分布式训练任务具有算力亲和性，然而算力由多层机间网络互联、带宽异构，导致跨节点网络成为训练瓶颈
   \item 调研现有大模型任务部署和算力调度优化方案，熟悉常见模型并行和数据并行工作
-  \item 建模不同算力间的通信拓扑、通信链路对任务训练时间的影响，辅助决策大模型训练任务部署
+  \item 对任务局部性建模，分析通信拓扑、链路对任务训练时间的影响，决策大模型训练任务部署
 \end{itemize}
 
 % \datedsubsection{\textbf{使用可编程交换机加速分布式模型训练}}{之江实验室，杭州}
@@ -80,7 +73,7 @@
 \begin{itemize}[parsep=0.5ex]
   \item 针对大规模测试实验编写自动化测试bash脚本
   \item 基于 C++ 编写端到端虚拟网络控制面测试案例
-  \item 基于 C++ 开发 Pulsar 消息队列订阅特性 (\href{https://github.com/futurewei-cloud/alcor-control-agent/pull/274}{PR \#274})
+  \item 基于 C++ 开发 Pulsar 消息队列订阅特性 (\href{https://github.com/futurewei-cloud/alcor-control-agent/pull/274}{\textit{PR \#274}})
 \end{itemize}
 
 \section{科研经历}
@@ -88,7 +81,7 @@
 \datedsubsection{\textbf{基于可编程网络实现精准模拟网络故障}}{中科大苏高院，苏州}
 \datedsubsection{\textit{主要开发者}}{2022.12-2023.9}
 \begin{itemize}[parsep=0.5ex]
-  \item 目前基于端主机的故障注入难以覆盖大量复杂网络故障场景，且无法针对应用流量精准注入故障
+  \item 基于端主机的故障注入难以覆盖大量复杂网络故障场景，且无法针对应用流量精准注入故障
   \item 基于可编程控制面设计并实现用户友好的多后端故障注入系统，提供一系列参数供用户自定义流量协议
   \item 针对流依赖和流过滤，设计一个解析器生成算法，能够根据用户指示生成对应数据面程序
   \item 针对多租户和路由路径，形式化故障注入点选择问题
@@ -101,7 +94,7 @@
 \begin{itemize}[parsep=0.5ex]
   \item 大规模分布式模型训练具有通信瓶颈，该项目通过可编程交换机在网内聚合梯度以降低通信量，从而加速分布式模型训练
   \item 针对流量可变性，设计基于随机舍入算法解决网内聚合场景下的梯度路由问题
-  \item 基于 Pytorch 实现包含 8 台服务器的 PS 架构分布式模型训练原型系统，主机间通过自定义协议进行通信
+  \item 基于 Pytorch 实现包含 8 台服务器的 PS 架构分布式模型训练原型系统，主机间通过自定义协议进行通信 (\href{https://github.com/Fangjin98/distributed-training-INA/}{\textit{链接}})
   \item 基于 Intel Tofino 可编程交换机实现网内聚合逻辑，并与主机端实现协同训练
   \item 相比较现有方案，降低分布式训练通信负载 $81.2\%$
 \end{itemize}
@@ -111,7 +104,7 @@
 \begin{itemize}[parsep=0.5ex]
   \item 边缘云的性能往往受到恶意用户和虚拟网络功能 (VNF)的影响，本文考虑限制恶意用户和 VNF 影响范围，提升边缘云鲁棒性
   \item 考虑到VNF部署和用户请求调度往往在不同时间维度，设计了一个离线算法决策VNF部署以及在线算法执行请求调度
-  \item 基于 Python 实现了包含 6 台 Nvidia Jetson Tx2s 和 20 台 Raspberry Pis 的原型系统
+  \item 基于 Python 实现了包含 6 台 Nvidia Jetson Tx2s 和 20 台 Raspberry Pis 的原型系统 (\href{https://github.com/Fangjin98/reveal-src}{\textit{链接}})
   \item 实验结果表明，在异常情况下该方案能够提升网络吞吐率 $57\%$
 \end{itemize}
 
@@ -119,7 +112,7 @@
 \datedsubsection{\textit{本科毕设项目}}{2019.6-2020.1}
 \begin{itemize}[parsep=0.5ex]
   \item 基于 Keras 训练 LSTM 模型以预测核电站反应堆蒸汽压力系统
-  \item 基于 C++ 移植训练好的 LSTM 模型至 Pynq-Z2 开发版
+  \item 基于 C++ 移植训练好的 LSTM 模型至 Pynq-Z2 开发版 (\href{https://github.com/Fangjin98/vivado-hls-rnn}{\textit{链接}})
   \item 相比较软件方案，能够减少模型推理时间 90 倍
   \item \textit{获得湖南大学优秀毕业论文奖}
 \end{itemize}
@@ -149,7 +142,7 @@
 \section{专业技能}
 
 \begin{itemize}[parsep=0.5ex]
-  \item 编程语言: C/C++, Python, P4, C\#, Swift
+  \item 编程语言: Python, C/C++, P4, C\#, Swift
   \item 开发框架: Pytorch, p4c, eBPF, Mininet
 \end{itemize}
 
