@@ -20,10 +20,9 @@
 
 \renewcommand\arraystretch{1.5}
 \begin{tabular}{p{13cm} p{4cm}}
-  \textbf{\huge 方缙} & \multirowcell{5}{\includegraphics[scale=0.1]{avatar}}\\
-  \email{fangjin98@mail.ustc.edu.cn} & \\
-  \phone{(+86) 181-5566-1676} & \\
-  \homepage[www.fangjin.site]{www.fangjin.site} & \\
+  \textbf{\huge 林祎凡} & \multirowcell{4}{\includegraphics[scale=0.5]{avatar}} \\
+  \email{yifanlin@mail.ustc.edu.cn} & \\
+  \phone{(+86) 158-5519-0679} & \\
 \end{tabular}
 
 
@@ -37,105 +36,61 @@
 
 \section{教育背景}
 
-\datedsubsection{\textbf{中国科学技术大学} \qquad \textit{硕博连读} \qquad 计算机科学与技术}{2020.9-2025.6 (预计)}
+\datedsubsection{\textbf{中国科学技术大学} \quad \textit{硕博连读} \quad 计算机科学与技术}{2022.9-2027.6 (预计)}
 \begin{itemize}
-  \item 研究方向: 数据中心网络、可编程网络、分布式训练、在网计算
+  \item 研究方向: 数据中心网络、可编程网络、分布式训练
   \item 导师：徐宏力、赵功名
 \end{itemize}
 
-\datedsubsection{\textbf{湖南大学} \qquad \qquad \qquad \textit{学士} \qquad \qquad 计算机科学与技术}{2016.9-2020.6}
-\begin{itemize}
-  \item 湖南大学优秀毕业论文
-\end{itemize}
+\datedsubsection{\textbf{中国科学技术大学} \quad \textit{学士} \qquad \quad 少年班学院}{2018.9-2022.6}
 
 \section{项目经历}
 
-\datedsubsection{\textbf{优化光网络下分布式训练节点部署工作}}{华为2012中央研究院，合肥}
-\datedsubsection{\textit{技术点负责人}}{2023.12-2024.5}
+\datedsubsection{\textbf{面向 AI 流量的高性能路由与调度}}{华为2012网络技术实验室}
+\datedsubsection{\textit{技术点负责人}}{2024.6-2024.9}
 \begin{itemize}[parsep=0.5ex]
-  \item 大模型的分布式训练任务具有算力亲和性，然而算力由多层机间网络互联、带宽异构，导致跨节点网络成为训练瓶颈
-  \item 调研现有大模型任务部署和算力调度优化方案，熟悉常见模型并行和数据并行方法
-  \item 调研现有模型压缩工作，熟悉稀疏模型训练优化方法
-  \item 对不同集合通信算法下的物理节点和逻辑节点通信模式建模，分析通信拓扑、链路对任务训练时间的影响
-  \item 设计任务部署算法降低光网络下跨机架任务通信量
+  \item 在AI大模型训练集群中，网络通信已成为限制训练速度的关键瓶颈，优化网络通信至关重要
+  \item 调研现有的AI集群时序控制方案，发现其难以处理华为AI集群内的复杂时序控制问题，据此提出了新的时序控制方案，可以有效解决已有方案的不足之处
 \end{itemize}
 
-\datedsubsection{\textbf{下一代云原生 SDN 平台开发测试}}{华为美研院 (Futurewei)，远程}
-\datedsubsection{\textit{项目开发}}{2021.6-2021.9}
+\datedsubsection{\textbf{东数西算背景下任务全域调度研究}}{华为2012网络技术实验室}
+\datedsubsection{\textit{算法设计、系统开发}}{2023.5-2024.5}
 \begin{itemize}[parsep=0.5ex]
-  \item 针对大规模测试实验编写自动化测试bash脚本
-  \item 基于 C++ 编写端到端虚拟网络控制面测试案例
-  \item 基于 C++ 开发 Pulsar 消息队列订阅特性 (\href{https://github.com/futurewei-cloud/alcor-control-agent/pull/274}{\textit{PR \#274}})
+  \item 调研发现在“东数西算”战略背景下，现有任务调度方案效率低下，难以进行全域任务调度。据此通过分析华为现网SKU资源需求、区域资源成本、区域服务质量等指标提出了基于子图匹配的高效任务调度算法，该算法在最优性和时间效率方面都得到了理论保障
+  \item 构建了基于 Java 的全域调度算法仿真系统，该系统支持高达 1000 个地理区域的任务调度规模，并确保单次调度时间不超过 300 毫秒。在仿真平台进行的实验表明，算法
+  \item 撰写名为“RAISE: A Recommendation Framework for Service Placement in Geo-distributed Clouds” 的论
+  文并投稿CCF A类会议INFOCOM'24
 \end{itemize}
 
 \section{科研经历}
 
 \datedsubsection{\textbf{基于可编程网络实现精准模拟网络故障}}{中科大苏高院，苏州}
-\datedsubsection{\textit{主要开发者}}{2022.12-2023.9}
+\datedsubsection{\textit{系统开发}}{2022.12-2023.4}
 \begin{itemize}[parsep=0.5ex]
-  \item 基于端主机的故障注入难以覆盖大量复杂网络故障场景，且无法针对应用流量精准注入故障
-  \item 基于可编程控制面设计并实现用户友好的多后端故障注入系统，提供一系列参数供用户自定义流量协议
-  \item 针对流依赖和流过滤，设计一个解析器生成算法，能够根据用户指示生成对应数据面程序
-  \item 针对多租户和路由路径，形式化故障注入点选择问题
-  \item 针对异构多后端网络设备，基于 P4 TNA 和 PSA 架构实现多种网络功能，系统资源消耗小于10\%
-  \item 在4个流行的分布式系统任务 (Horovod, Redis, RDMA, Kafka) 中测试该系统并验证故障注入效果
+  \item 调研发现基于端主机的故障注入难以覆盖大量复杂网络故障场景，据此提出利用可编程交换机来进行故障注入
+  \item 设计并实现了用户友好的多后端故障注入系统，提供一系列参数供用户自定义流量协议，并在多个流行的分布式系统任务中测试该系统并验证故障注入效果
 \end{itemize}
 
-\datedsubsection{\textbf{使用可编程交换机加速分布式模型训练}}{之江实验室，杭州}
-\datedsubsection{\textit{主要开发者}}{2022.6-2022.9}
+\datedsubsection{\textbf{网内聚合场景下可编程交换机的部署问题}}{之江实验室，杭州}
+\datedsubsection{\textit{算法设计}}{2022.6-2022.9}
 \begin{itemize}[parsep=0.5ex]
-  \item 大规模分布式模型训练具有通信瓶颈，该项目通过可编程交换机在网内聚合梯度以降低通信量，从而加速分布式模型训练
-  \item 针对流量可变性，设计基于随机舍入算法解决网内聚合场景下的梯度路由问题
-  \item 基于 Pytorch 实现包含 8 台服务器的 PS 架构分布式模型训练原型系统，主机间通过自定义协议进行通信 (\href{https://github.com/Fangjin98/distributed-training-INA/}{\textit{链接}})
-  \item 基于 Intel Tofino 可编程交换机实现网内聚合逻辑，并与主机端实现协同训练
-  \item 相比较现有方案，降低分布式训练通信负载 $81.2\%$
-\end{itemize}
-
-\datedsubsection{\textbf{面向边缘云考虑鲁棒性的虚拟网络功能部署算法}}{中科大，合肥}
-\datedsubsection{\textit{主要开发者}}{2021.2-2021.6}
-\begin{itemize}[parsep=0.5ex]
-  \item 边缘云的性能往往受到恶意用户和虚拟网络功能 (VNF)的影响，本文考虑限制恶意用户和 VNF 影响范围，提升边缘云鲁棒性
-  \item 考虑到VNF部署和用户请求调度往往在不同时间维度，设计了一个离线算法决策VNF部署以及在线算法执行请求调度
-  \item 基于 Python 实现了包含 6 台 Nvidia Jetson Tx2s 和 20 台 Raspberry Pis 的原型系统 (\href{https://github.com/Fangjin98/reveal-src}{\textit{链接}})
-  \item 实验结果表明，在异常情况下该方案能够提升网络吞吐率 $57\%$
-\end{itemize}
-
-\datedsubsection{\textbf{基于 FPGA 高层次综合实现 LSTM 模型}}{湖南大学，长沙}
-\datedsubsection{\textit{本科毕设项目}}{2019.6-2020.1}
-\begin{itemize}[parsep=0.5ex]
-  \item 基于 Keras 训练 LSTM 模型以预测核电站反应堆蒸汽压力系统
-  \item 基于 C++ 移植训练好的 LSTM 模型至 Pynq-Z2 开发版 (\href{https://github.com/Fangjin98/vivado-hls-rnn}{\textit{链接}})
-  \item 相比较软件方案，能够减少模型推理时间 90 倍
-  \item \textit{获得湖南大学优秀毕业论文奖}
+  \item 调研发现网内聚合场景下可编程交换机的部署成本高，据此提出了基于斯坦纳树问题的可编程交换机增量部署算法，算法的性能得到了理论保障
+  \item 经过实验评估，该算法可以在不影响训练性能的前提下节约60\%的可编程交换机数量
 \end{itemize}
 
 \section{学术成果}
 
 \begin{enumerate}[parsep=0.5ex]
-  \item \textbf{J. Fang}, G. Zhao, H. Xu, Z. Yu, B. Shen, X. Li, \textit{Accelerating Distributed Training with Collaborative In-network Aggregation}, IEEE/ACM Transactions on Networking (\textbf{ToN}), 2024, CCF A
-  \item \textbf{J. Fang}, G. Zhao, H. Xu, C. Wu, Z. Yu, \textit{GRID: Gradient Routing with In-network Aggregation for Distributed Training}, IEEE/ACM Transactions on Networking (\textbf{ToN}), 2023, CCF A
-  \item \textbf{J. Fang}, G. Zhao, H. Xu, Z. Yu, B. Shen, X. Li, \textit{GOAT: Gradient Scheduling with Collaborative In-Network Aggregation for Distributed Training}, IEEE/ACM International Symposium on Quality of Service (\textbf{IWQoS}), 2023, CCF B
-  \item \textbf{J. Fang}, G. Zhao, H. Xu, H. Tu, H. Wang, \textit{Reveal: Robustness-Aware VNF Placement and Request Scheduling in Edge Clouds}, Computer Networks (\textbf{ComNet}), 2023, CCF B
-  % \item (在投) \textbf{J. Fang}, G. Zhao, H. Xu, Z. Yu, J. Jiang, F. Zeng, \textit{Injecting Failure for Success: Towards General, Flexible and Efficient Network Fault Injection}, USENIX ATC, 2024, CCF A
-  \item J. Liu, Y. Zhai, G. Zhao, H. Xu, \textbf{J. Fang}, Z. Zeng, Y. Zhu, InArt: In-Network Aggregation with Route Selection for Accelerating Distributed Training, International World Wide Web Conference (\textbf{WWW}), 2024, CCF A
-  \item 赵功名, \textbf{方缙}, 徐宏力, 吴昌博, \textit{PS架构下基于可编程交换机的梯度调度方法和装置}, 已授权
-  \item 徐宏力, \textbf{方缙}, 赵功名, 凃化清, 汪海波, \textit{一种边缘云系统中的VNF部署调度方法}, 已公开
+  \item \textbf{Y. Lin}, G. Zhao, J. Wen, L. Luo, C. Huang, \textit{RAISE: A Recommendation Framework for Service Placement in Geo-distributed Clouds}, INFOCOM'25 在投
+  \item 赵功名, 吴昌博, 徐宏力, 包剑峰, 方缙, \textbf{林祎凡}, 黄河, 黄刘生, \textit{基于网内聚合的分布式模型训练加速
+  综述}, 计算机研究与发展, 在投
 \end{enumerate}
 
 \section{奖项荣誉}
 
 \begin{itemize}[parsep=0.5ex]
-  \item \datedline{中国电科十四所国睿奖学金}{2023}
-  \item \datedline{英特尔 P4 中国黑客松优胜奖}{2022}
-  \item \datedline{一等学业奖学金（博士）$\times 2$}{2022, 2023}
-  \item \datedline{一等学业奖学金（硕士）$\times 2$}{2020, 2021}
-\end{itemize}
-
-\section{专业技能}
-
-\begin{itemize}[parsep=0.5ex]
-  \item 编程语言: Python, C/C++, P4, C\#, Swift
-  \item 开发框架: Pytorch, p4c, eBPF, Mininet
+  \item \datedline{2022 英特尔 P4 中国黑客松 \textbf{The Exellent Prize}}{}
+  \item \datedline{中国科学技术大学硕士研究生一等学业奖学金}{}
 \end{itemize}
 
 \end{document}
